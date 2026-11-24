@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ماهدخت | فروشگاه</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#fff7fb;color:#963968;font-family:Tahoma,Arial,sans-serif;padding-bottom:100px}
+*{box-sizing:border-box}html{background:#ffffff!important;color-scheme:light}body{margin:0!important;background:#ffffff!important;color:#963968;font-family:Tahoma,Arial,sans-serif;padding-bottom:100px}
 button,input{font:inherit;cursor:pointer}.page{width:min(100%,760px);margin:auto;padding:12px 14px 20px}
 .topbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;background:#fbe5f0;border:1px solid #f5d0e1;border-radius:28px;padding:12px 14px;box-shadow:0 5px 18px #d98caf25;min-height:78px}
 .actions{display:flex;gap:10px;align-items:center}.actions.left{justify-content:flex-start}.actions.right{justify-content:flex-end}
@@ -14,10 +14,10 @@ button,input{font:inherit;cursor:pointer}.page{width:min(100%,760px);margin:auto
 h2.section-title{text-align:center;color:#c83f86;font-size:21px;margin:22px 0 13px}
 .categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.category{border:0;background:none;padding:0}
 .category img{display:block;width:100%;height:auto;border:2px solid #efbfd4;border-radius:18px;box-shadow:0 4px 12px #e7a5c44a}
-.shipping{margin:20px 0}.services{background:linear-gradient(145deg,#fffafd,#f9dce9);border:1px solid #efbfd4;border-radius:22px;padding:14px;box-shadow:0 5px 18px #d98caf30}
-.services h2{text-align:center;font-size:21px;margin:4px 0 14px;color:#c83f86}.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.service-card{padding:0;border:1px solid #efbfd4;border-radius:17px;overflow:hidden;background:#fff4f9;color:#b63878}
-.service-card img{width:100%;height:clamp(110px,30vw,175px);display:block;object-fit:cover}.service-card span{display:block;text-align:center;padding:9px 4px;font-weight:bold;font-size:14px}
+.shipping{margin:20px 0}.services{background:#fffafd!important;border:1px solid #efbfd4;border-radius:22px;padding:14px;box-shadow:0 5px 18px #d98caf30}
+.services h2{text-align:center;font-size:21px;margin:4px 0 14px;color:#c83f86}.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.service-card,.category{background:#fff!important}
+.service-card{padding:0;border:1px solid #efbfd4;border-radius:17px;overflow:hidden;background:#fff4f9;color:#b63878;line-height:0}
+.service-card img{width:100%;height:auto;aspect-ratio:1/1;display:block;object-fit:cover}.service-card span{display:none!important}
 .bottom-nav{position:fixed;z-index:5;bottom:8px;left:50%;transform:translateX(-50%);width:min(calc(100% - 24px),730px);display:grid;grid-template-columns:repeat(5,1fr);background:#fbe5f0;border:1px solid #efbfd4;border-radius:28px;box-shadow:0 5px 20px #d98caf45;overflow:hidden}
 .nav-btn{border:0;border-left:1px solid #e9bfd2;background:transparent;color:#b84480;min-height:76px;padding:8px 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}.nav-btn:last-child{border-left:0}
 .nav-emoji{font-size:25px;line-height:1.2}.nav-label{font-size:10px;font-weight:bold;white-space:nowrap}
@@ -51,10 +51,10 @@ h2.section-title{text-align:center;color:#c83f86;font-size:21px;margin:22px 0 13
 </section>
 <img class="shipping" id="shipping" src="shipping.png" alt="ارسال به سراسر کشور">
 <section class="services" id="services"><h2>خدمات ماهدخت 💗</h2><div class="services-grid">
-<button class="service-card" onclick="showMessage('تخفیف‌ها','از تخفیف‌های ویژه ماهدخت باخبر شو! 🎀')"><img src="service-discounts.png" alt="تخفیف‌ها"><span>🎀 تخفیف‌ها</span></button>
-<button class="service-card" onclick="showMessage('آیتم‌های جذاب','منتخب‌های جذاب ماهدخت 💝')"><img src="service-favorites.png" alt="آیتم‌های جذاب"><span>🎁 آیتم‌های جذاب</span></button>
-<button class="service-card" onclick="showMessage('پرداخت امن','برای راهنمایی پرداخت با فروشگاه تماس بگیر 💗')"><img src="service-secure-payment.png" alt="پرداخت امن"><span>💗 پرداخت امن</span></button>
-<button class="service-card" onclick="showMessage('درباره ماهدخت','به دنیای صورتی و دوست‌داشتنی ماهدخت خوش آمدی 🌙')"><img src="service-about-maahdokht.png" alt="درباره ماهدخت"><span>🌙 درباره ماهدخت</span></button>
+<button class="service-card" onclick="showMessage('تخفیف‌ها','از تخفیف‌های ویژه ماهدخت باخبر شو! 🎀')"><img src="service-discounts.png" alt="تخفیف‌ها"></button>
+<button class="service-card" onclick="showMessage('آیتم‌های جذاب','منتخب‌های جذاب ماهدخت 💝')"><img src="service-favorites.png" alt="آیتم‌های جذاب"></button>
+<button class="service-card" onclick="showMessage('پرداخت امن','برای راهنمایی پرداخت با فروشگاه تماس بگیر 💗')"><img src="service-secure-payment.png" alt="پرداخت امن"></button>
+<button class="service-card" onclick="showMessage('درباره ماهدخت','به دنیای صورتی و دوست‌داشتنی ماهدخت خوش آمدی 🌙')"><img src="service-about-maahdokht.png" alt="درباره ماهدخت"></button>
 </div></section></main>
 <nav class="bottom-nav" aria-label="منوی پایین">
 <button class="nav-btn" onclick="showMessage('حساب کاربری','بخش حساب کاربری ماهدخت به‌زودی فعال می‌شود 💗')"><span class="nav-emoji">👤</span><span class="nav-label">حساب کاربری</span></button>
