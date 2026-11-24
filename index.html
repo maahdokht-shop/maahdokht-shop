@@ -1,104 +1,131 @@
-<!DOCTYPE html>  <html lang="fa" dir="rtl">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1">  
-<title>ماهدخت | فروشگاه اکسسوری</title>  
-<style>  
-*{box-sizing:border-box}  
-:root {  
-color-scheme: light;  
-}  
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ماهدخت | فروشگاه</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fcebf0;font-family:Tahoma,Arial,sans-serif}
+.page{width:min(100%,1024px);margin:0 auto;position:relative;line-height:0}
+.page>img{display:block;width:100%;height:auto}
+.hotspot{position:absolute;display:block;border:0;background:transparent;cursor:pointer;border-radius:22px}
+.hotspot:focus-visible{outline:3px solid #bd3974;outline-offset:2px}
+#h-hair{left:2.6%;top:39.2%;width:31.4%;height:12.8%}
+#h-jewelry{left:35.6%;top:39.2%;width:29.5%;height:12.8%}
+#h-accessory{left:66.8%;top:39.2%;width:30.8%;height:12.8%}
+#h-sewing{left:2.6%;top:56.7%;width:31.4%;height:13.2%}
+#h-gift{left:35.6%;top:56.7%;width:29.5%;height:13.2%}
+#h-pendant{left:66.8%;top:56.7%;width:30.8%;height:13.2%}
+#h-hero{left:12%;top:17%;width:35%;height:14%}
+#h-brand{left:5%;top:0.5%;width:90%;height:11%}
+#h-address{left:4%;top:90%;width:92%;height:9%}
 
-html, body {
-  margin: 0;
-  min-height: 100%;
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  color: #d82b8e;
-  font-family: Tahoma, Arial, sans-serif;
-  color-scheme: light;
+/* بخش جدید خدمات ماهدخت؛ چهار کارت تصویری در دو ردیف */
+.services-panel{
+  position:absolute;
+  top:66.1%;
+  left:2.5%;
+  width:95%;
+  z-index:2;
+  padding:10px;
+  border:1px solid #f2bfd4;
+  border-radius:22px;
+  background:linear-gradient(145deg,#fff8fc,#f9dce9);
+  box-shadow:0 5px 18px #d98caf35;
+  direction:rtl;
+  line-height:1.4;
 }
-header{margin:10px auto;max-width:1100px;min-height:132px;border-radius:42px;background:#fce5f0;display:flex;align-items:center;justify-content:space-around;padding:12px;box-shadow:0 4px 15px #e9b4ce66}
-.tools{font-size:35px;display:flex;gap:20px;align-items:center}
-.brand{text-align:center}
-
-.brand-title {
-  color: #df3b98;
-  font-size: 48px;
-  margin: 0 0 8px;
-  font-weight: bold;
-  text-shadow: 0 2px 3px #f5b6d5;
+.services-title{
+  margin:0 0 9px;
+  color:#c43f83;
+  text-align:center;
+  font-size:clamp(15px,3.6vw,22px);
+  font-weight:bold;
+  text-shadow:0 1px 2px #fff;
 }
-
-.brand img{width:min(320px,48vw);height:76px;object-fit:contain;display:block}
-.brand img{width:min(320px,48vw);height:76px;object-fit:contain;display:block}
-header p{margin:0;font-size:clamp(11px,2vw,18px);font-weight:bold}
-main{max-width:1100px;margin:auto;padding:0 12px 110px}
-.hero img,.shipping img{width:100%;display:block;border-radius:34px;box-shadow:0 3px 12px #e9b4ce66}
-.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 24px}
-.category{border:0;background:none;padding:0;cursor:pointer;overflow:hidden;border-radius:26px}
-.category img{width:100%;height:auto;display:block}
-.shipping{margin:22px 0}
-.services,.bottom{display:grid;background:#fce5f0;border:1px solid #f5c6dc;border-radius:35px;box-shadow:0 3px 12px #e9b4ce55}
-.services{grid-template-columns:repeat(4,1fr);margin:18px 0 12px}
-.bottom{grid-template-columns:repeat(5,1fr);position:fixed;bottom:8px;left:2%;width:96%;z-index:5}
-.services button,.bottom button{background:transparent;border:0;color:#d82b8e;padding:14px 4px;font-weight:bold;font-size:clamp(10px,1.7vw,17px);cursor:pointer}
-.services button+button,.bottom button+button{border-right:1px solid #e9a9ca}
-.symbol{font-size:30px;display:block;margin-bottom:5px}
-#notice{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#d82b8e;color:white;padding:12px 20px;border-radius:24px;display:none;z-index:9;white-space:nowrap}
-@media(max-width:600px){
-header{min-height:105px;margin:6px 8px}
-.tools{font-size:26px;gap:10px}
-.categories{gap:8px}
-.category{border-radius:20px}
-.services{border-radius:25px}
-.services button{padding:10px 2px}
-.symbol{font-size:24px}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:9px;
 }
-</style>
+.service-card{
+  display:block;
+  overflow:hidden;
+  border:1px solid #f2c5d9;
+  border-radius:15px;
+  background:#fff4f9;
+  color:#b63878;
+  text-decoration:none;
+  box-shadow:0 3px 9px #d98caf24;
+  transition:transform .15s ease;
+}
+.service-card:active{transform:scale(.98)}
+.service-card img{
+  display:block;
+  width:100%;
+  height:clamp(88px,22vw,155px);
+  object-fit:cover;
+}
+.service-card span{
+  display:block;
+  padding:6px 3px 8px;
+  text-align:center;
+  font-size:clamp(12px,2.8vw,16px);
+  font-weight:bold;
+}
+.viewer{display:none;position:fixed;inset:0;background:#351c2dcc;z-index:10;align-items:center;justify-content:center;padding:18px}
+.viewer.open{display:flex}.box{position:relative;background:#fff8fa;border-radius:20px;padding:15px;width:min(720px,100%);max-height:92vh;overflow:auto;text-align:center;line-height:1.6;color:#744256}
+.box h2{margin:2px 40px 14px;color:#c44c80;font-size:21px}.close{position:absolute;left:12px;top:10px;border:0;border-radius:50%;width:35px;height:35px;background:#f6d8e3;color:#9e3e69;font-size:23px;cursor:pointer}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tiles img{width:100%;height:210px;object-fit:cover;border-radius:13px;display:block}.tiles p{font-size:13px;margin:6px}
+.hint{font-size:12px;color:#987482;margin:12px 0 0}
+@media(max-width:560px){.tiles img{height:145px}.box{padding:12px}.box h2{font-size:18px}}
+</style></head>
+<body>
+<div class="page">
+<img src="assets/design-reference.jpg" alt="طرح اصلی فروشگاه ماهدخت">
+<button class="hotspot" id="h-hair" aria-label="اکسسوری مو" onclick="show('اکسسوری مو','hair')"></button>
+<button class="hotspot" id="h-jewelry" aria-label="بدلیجات" onclick="show('بدلیجات','jewelry')"></button>
+<button class="hotspot" id="h-accessory" aria-label="اکسسوری" onclick="show('اکسسوری','accessory')"></button>
+<button class="hotspot" id="h-sewing" aria-label="خرازی" onclick="show('خرازی','sewing')"></button>
+<button class="hotspot" id="h-gift" aria-label="کادویی" onclick="show('کادویی','gift')"></button>
+<button class="hotspot" id="h-pendant" aria-label="پلاک" onclick="show('پلاک','pendant')"></button>
+<button class="hotspot" id="h-hero" aria-label="مشاهده محصولات" onclick="showAll()"></button>
+<button class="hotspot" id="h-brand" aria-label="همه محصولات" onclick="showAll()"></button>
+<button class="hotspot" id="h-address" aria-label="آدرس فروشگاه" onclick="document.getElementById('addressView').classList.add('open')"></button>
 
-</head>  
-<body>  
-<header>  
-<div class="tools">☰</div>  
-<div class="brand">  
-<h1 class="brand-title">☾ ماهدخت</h1>  
-<p>سفارش آنلاین و حضوری - پرداخت از سایت و دایرکت</p>  
-</div>  
-<div class="tools"><span>🛒<sup>۰</sup></span><span>⌕</span></div>  
-</header>  <main>  
-<section class="hero">  
-<img src="hero.png" alt="ماهدخت؛ انتخابی خاص برای زیبایی خاص‌تر">  
-</section>  <section class="categories">  
-<button class="category" onclick="showMsg('اکسسوری')"><img src="cat-accessories.png" alt="اکسسوری"></button>  
-<button class="category" onclick="showMsg('بدلیجات')"><img src="cat-jewelry.png" alt="بدلیجات"></button>  
-<button class="category" onclick="showMsg('اکسسوری مو')"><img src="cat-hair.png" alt="اکسسوری مو"></button>  
-<button class="category" onclick="showMsg('پلاک')"><img src="cat-pendant.png" alt="پلاک"></button>  
-<button class="category" onclick="showMsg('کادویی')"><img src="cat-gift.png" alt="کادویی"></button>  
-<button class="category" onclick="showMsg('خرازی')"><img src="cat-haberdashery.png" alt="خرازی"></button>  
-</section>  <section class="shipping">  
-<img src="shipping.png" alt="ارسال به سراسر کشور با بسته‌بندی شیک و خاص">  
-</section>  <section class="services">  
-<button onclick="showMsg('تخفیف ها')"><span class="symbol">🎀</span>تخفیف ها</button>  
-<button onclick="showMsg('آیتم های جذاب')"><span class="symbol">🎁</span>آیتم های جذاب</button>  
-<button onclick="showMsg('پرداخت امن')"><span class="symbol">💕</span>پرداخت امن</button>  
-<button onclick="showMsg('درباره ی ماهدخت')"><span class="symbol">🌙</span>درباره ی ماهدخت</button>  
-</section>  
-</main>  <nav class="bottom">  
-<button onclick="showMsg('آدرس فروشگاه')"><span class="symbol">💕</span>آدرس فروشگاه</button>  
-<button onclick="showMsg('دسته‌بندی‌ها')"><span class="symbol">🧸</span>دسته‌بندی‌ها</button>  
-<button onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="symbol">🏠</span>خانه</button>  
-<button onclick="showMsg('علاقه‌مندی‌ها')"><span class="symbol">💗</span>علاقه‌مندی‌ها</button>  
-<button onclick="showMsg('حساب کاربری')"><span class="symbol">👤</span>حساب کاربری</button>  
-</nav>  <div id="notice"></div>  
-<script>  
-function showMsg(label){  
-const n=document.getElementById('notice');  
-n.textContent='بخش «'+label+'» به‌زودی تکمیل می‌شود 💗';  
-n.style.display='block';  
-clearTimeout(window.msgTimer);  
-window.msgTimer=setTimeout(()=>n.style.display='none',2200);  
-}  
-</script>  
-</body>  
-</html>
+<section class="services-panel" aria-label="خدمات ماهدخت">
+  <h2 class="services-title">خدمات ماهدخت 💗</h2>
+  <div class="services-grid">
+    <a class="service-card" href="#discounts" onclick="openService('تخفیف‌ها');return false">
+      <img src="assets/service-discounts.png" alt="تخفیف‌های ماهدخت">
+      <span>🎀 تخفیف‌ها</span>
+    </a>
+    <a class="service-card" href="#favorites" onclick="openService('آیتم‌های جذاب');return false">
+      <img src="assets/service-favorites.png" alt="آیتم‌های جذاب ماهدخت">
+      <span>🎁 آیتم‌های جذاب</span>
+    </a>
+    <a class="service-card" href="#secure-payment" onclick="openService('پرداخت امن');return false">
+      <img src="assets/service-secure-payment.png" alt="پرداخت امن">
+      <span>💗 پرداخت امن</span>
+    </a>
+    <a class="service-card" href="#about" onclick="openService('درباره‌ی ماهدخت');return false">
+      <img src="assets/service-about-maahdokht.png" alt="درباره‌ی ماهدخت">
+      <span>🌙 درباره‌ی ماهدخت</span>
+    </a>
+  </div>
+</section>
+</div>
+<div class="viewer" id="viewer" onclick="if(event.target===this)hide()"><div class="box"><button class="close" onclick="hide()">×</button><h2 id="title">محصولات ماهدخت</h2><div class="tiles" id="tiles"></div><p class="hint">برای دیدن عکس بزرگ‌تر، روی تصویر محصول بزن.</p></div></div>
+<div class="viewer" id="addressView" onclick="if(event.target===this)this.classList.remove('open')"><div class="box"><button class="close" onclick="document.getElementById('addressView').classList.remove('open')">×</button><h2>آدرس فروشگاه ماهدخت</h2><p>کرج، شاهین‌ویلا، نبش هفتم شرقی، پاساژ مهرگان، طبقه ۲، واحد ۳۰۸</p></div></div>
+<div class="viewer" id="photoView" onclick="this.classList.remove('open')"><div class="box"><button class="close" onclick="document.getElementById('photoView').classList.remove('open')">×</button><img id="largePhoto" style="width:100%;max-height:75vh;object-fit:contain;border-radius:12px" alt="نمای بزرگ محصول"></div></div>
+<script>
+const catalog={hair:['کش مو و گیره','اکسسوری مو'],jewelry:['گوشواره و زیورآلات','بدلیجات'],accessory:['اکسسوری‌های خاص','اکسسوری'],sewing:['لوازم خرازی','خرازی'],gift:['بسته هدیه','کادویی'],pendant:['پلاک و آویز','پلاک']};
+function show(name,key){document.getElementById('title').textContent=name;document.getElementById('tiles').innerHTML=`<div><img src="assets/${key}.jpg" alt="${name}" onclick="zoom('assets/${key}.jpg')"><p>${catalog[key][0]}</p></div>`;document.getElementById('viewer').classList.add('open')}
+function showAll(){document.getElementById('title').textContent='دسته‌بندی محصولات ماهدخت';document.getElementById('tiles').innerHTML=Object.entries(catalog).map(([k,v])=>`<div><img src="assets/${k}.jpg" alt="${v[1]}" onclick="zoom('assets/${k}.jpg')"><p>${v[1]}</p></div>`).join('');document.getElementById('viewer').classList.add('open')}
+function hide(){document.getElementById('viewer').classList.remove('open')}
+function zoom(src){document.getElementById('largePhoto').src=src;document.getElementById('photoView').classList.add('open')}
+function openService(name){
+  document.getElementById('title').textContent=name;
+  document.getElementById('tiles').innerHTML='<p style="grid-column:1/-1">این بخش به‌زودی تکمیل می‌شود 💗</p>';
+  document.getElementById('viewer').classList.add('open');
+}
+</script></body></html>
