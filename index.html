@@ -30,6 +30,9 @@ h2.section-title{text-align:center;color:#c83f86;font-size:21px;margin:22px 0 13
 .search-result{border:1px solid #efbfd4;border-radius:12px;background:#fff4f9;color:#b63878;padding:6px;display:flex;align-items:center;gap:6px;text-align:right}
 .search-result img{width:52px;height:52px;object-fit:cover;border-radius:9px}
 .search-result span{font-size:13px;font-weight:bold}
+
+.store-map-link{display:inline-block;margin-top:14px;padding:11px 18px;border-radius:14px;background:#f8dce8;color:#8b3d60;text-decoration:none;font-weight:700}
+.store-map-link:hover{background:#f2c8da}
 </style></head>
 <body>
 <main class="page">
@@ -61,8 +64,9 @@ h2.section-title{text-align:center;color:#c83f86;font-size:21px;margin:22px 0 13
 <button class="nav-btn" onclick="showMessage('علاقه‌مندی‌ها','هنوز محصولی به علاقه‌مندی‌ها اضافه نکردی 💕')"><span class="nav-emoji">💗</span><span class="nav-label">علاقه‌مندی‌ها</span></button>
 <button class="nav-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="nav-emoji">🏠</span><span class="nav-label">خانه</span></button>
 <button class="nav-btn" onclick="document.querySelector('.categories').scrollIntoView({behavior:'smooth'})"><span class="nav-emoji">🧸</span><span class="nav-label">دسته‌بندی‌ها</span></button>
-<button class="nav-btn" onclick="showMessage('آدرس فروشگاه','آدرس فروشگاه را اینجا وارد کن 💗')"><span class="nav-emoji">💕</span><span class="nav-label">آدرس فروشگاه</span></button>
+<button class="nav-btn" onclick="openModal('storeModal')"><span class="nav-emoji">💕</span><span class="nav-label">آدرس فروشگاه</span></button>
 </nav>
+<div class="modal" id="storeModal" onclick="if(event.target===this)closeModal(this.id)"><div class="modal-box"><button class="close" onclick="closeModal('storeModal')">×</button><h2>📍 آدرس فروشگاه ماهدخت</h2><p>کرج، بلوار امام خمینی، شاهین‌ویلا، بین هفتم شرقی و هشتم شرقی، پلاک ۲، طبقه دوم، واحد ۳۰۸</p><a class="store-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=کرج+بلوار+امام+خمینی+شاهین+ویلا+بین+هفتم+شرقی+و+هشتم+شرقی+پلاک+2" target="_blank" rel="noopener noreferrer">مشاهده آدرس و مسیر در نقشه ↗</a></div></div>
 <div class="modal" id="searchModal" onclick="if(event.target===this)closeModal(this.id)"><div class="modal-box"><button class="close" onclick="closeModal('searchModal')">×</button><h2>جستجو در ماهدخت</h2><input id="searchInput" class="search-input" placeholder="مثلاً پلاک، بدلیجات، خرازی..." oninput="searchCategories(this.value)"><div id="searchResults" class="search-results"></div></div></div>
 <div class="modal" id="cartModal" onclick="if(event.target===this)closeModal(this.id)"><div class="modal-box"><button class="close" onclick="closeModal('cartModal')">×</button><h2>🛒 سبد خرید</h2><p>سبد خریدت فعلاً خالیه 💗</p></div></div>
 <div class="modal" id="menuModal" onclick="if(event.target===this)closeModal(this.id)"><div class="modal-box"><button class="close" onclick="closeModal('menuModal')">×</button><h2>منوی ماهدخت</h2><p><a href="#" onclick="closeModal('menuModal');window.scrollTo({top:0,behavior:'smooth'});return false">خانه</a></p><p><a href="#categories" onclick="closeModal('menuModal');return false">دسته‌بندی‌ها</a></p><p><a href="#services" onclick="closeModal('menuModal');return false">خدمات ماهدخت</a></p><p><a href="#shipping" onclick="closeModal('menuModal');return false">ارسال</a></p></div></div>
