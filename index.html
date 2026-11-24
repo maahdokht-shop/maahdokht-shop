@@ -4,128 +4,100 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ماهدخت | فروشگاه</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#fcebf0;font-family:Tahoma,Arial,sans-serif}
-.page{width:min(100%,1024px);margin:0 auto;position:relative;line-height:0}
-.page>img{display:block;width:100%;height:auto}
-.hotspot{position:absolute;display:block;border:0;background:transparent;cursor:pointer;border-radius:22px}
-.hotspot:focus-visible{outline:3px solid #bd3974;outline-offset:2px}
-#h-hair{left:2.6%;top:39.2%;width:31.4%;height:12.8%}
-#h-jewelry{left:35.6%;top:39.2%;width:29.5%;height:12.8%}
-#h-accessory{left:66.8%;top:39.2%;width:30.8%;height:12.8%}
-#h-sewing{left:2.6%;top:56.7%;width:31.4%;height:13.2%}
-#h-gift{left:35.6%;top:56.7%;width:29.5%;height:13.2%}
-#h-pendant{left:66.8%;top:56.7%;width:30.8%;height:13.2%}
-#h-hero{left:12%;top:17%;width:35%;height:14%}
-#h-brand{left:5%;top:0.5%;width:90%;height:11%}
-#h-address{left:4%;top:90%;width:92%;height:9%}
-
-/* بخش جدید خدمات ماهدخت؛ چهار کارت تصویری در دو ردیف */
-.services-panel{
-  position:absolute;
-  top:66.1%;
-  left:2.5%;
-  width:95%;
-  z-index:2;
-  padding:10px;
-  border:1px solid #f2bfd4;
-  border-radius:22px;
-  background:linear-gradient(145deg,#fff8fc,#f9dce9);
-  box-shadow:0 5px 18px #d98caf35;
-  direction:rtl;
-  line-height:1.4;
-}
-.services-title{
-  margin:0 0 9px;
-  color:#c43f83;
-  text-align:center;
-  font-size:clamp(15px,3.6vw,22px);
-  font-weight:bold;
-  text-shadow:0 1px 2px #fff;
-}
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:9px;
-}
-.service-card{
-  display:block;
-  overflow:hidden;
-  border:1px solid #f2c5d9;
-  border-radius:15px;
-  background:#fff4f9;
-  color:#b63878;
-  text-decoration:none;
-  box-shadow:0 3px 9px #d98caf24;
-  transition:transform .15s ease;
-}
-.service-card:active{transform:scale(.98)}
-.service-card img{
-  display:block;
-  width:100%;
-  height:clamp(88px,22vw,155px);
-  object-fit:cover;
-}
-.service-card span{
-  display:block;
-  padding:6px 3px 8px;
-  text-align:center;
-  font-size:clamp(12px,2.8vw,16px);
-  font-weight:bold;
-}
-.viewer{display:none;position:fixed;inset:0;background:#351c2dcc;z-index:10;align-items:center;justify-content:center;padding:18px}
-.viewer.open{display:flex}.box{position:relative;background:#fff8fa;border-radius:20px;padding:15px;width:min(720px,100%);max-height:92vh;overflow:auto;text-align:center;line-height:1.6;color:#744256}
-.box h2{margin:2px 40px 14px;color:#c44c80;font-size:21px}.close{position:absolute;left:12px;top:10px;border:0;border-radius:50%;width:35px;height:35px;background:#f6d8e3;color:#9e3e69;font-size:23px;cursor:pointer}
-.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tiles img{width:100%;height:210px;object-fit:cover;border-radius:13px;display:block}.tiles p{font-size:13px;margin:6px}
-.hint{font-size:12px;color:#987482;margin:12px 0 0}
-@media(max-width:560px){.tiles img{height:145px}.box{padding:12px}.box h2{font-size:18px}}
+*{box-sizing:border-box}body{margin:0;background:#fff7fb;color:#963968;font-family:Tahoma,Arial,sans-serif;padding-bottom:100px}
+button,input{font:inherit;cursor:pointer}.page{width:min(100%,760px);margin:auto;padding:12px 14px 20px}
+.topbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;background:#fbe5f0;border:1px solid #f5d0e1;border-radius:28px;padding:12px 14px;box-shadow:0 5px 18px #d98caf25;min-height:78px}
+.actions{display:flex;gap:10px;align-items:center}.actions.left{justify-content:flex-start}.actions.right{justify-content:flex-end}
+.icon-btn{border:0;background:transparent;color:#c83f86;font-size:27px;padding:5px}.brand{font-size:clamp(25px,6vw,42px);font-weight:bold;color:#d23d91;text-shadow:0 2px 3px #f3b5d2;white-space:nowrap}
+.tagline{text-align:center;color:#b94c86;font-size:13px;margin:12px 0 18px}
+.hero,.shipping{display:block;width:100%;height:auto;border-radius:20px}.hero{margin-bottom:18px}
+h2.section-title{text-align:center;color:#c83f86;font-size:21px;margin:22px 0 13px}
+.categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.category{border:0;background:none;padding:0}
+.category img{display:block;width:100%;height:auto;border:2px solid #efbfd4;border-radius:18px;box-shadow:0 4px 12px #e7a5c44a}
+.shipping{margin:20px 0}.services{background:linear-gradient(145deg,#fffafd,#f9dce9);border:1px solid #efbfd4;border-radius:22px;padding:14px;box-shadow:0 5px 18px #d98caf30}
+.services h2{text-align:center;font-size:21px;margin:4px 0 14px;color:#c83f86}.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.service-card{padding:0;border:1px solid #efbfd4;border-radius:17px;overflow:hidden;background:#fff4f9;color:#b63878}
+.service-card img{width:100%;height:clamp(110px,30vw,175px);display:block;object-fit:cover}.service-card span{display:block;text-align:center;padding:9px 4px;font-weight:bold;font-size:14px}
+.bottom-nav{position:fixed;z-index:5;bottom:8px;left:50%;transform:translateX(-50%);width:min(calc(100% - 24px),730px);display:grid;grid-template-columns:repeat(5,1fr);background:#fbe5f0;border:1px solid #efbfd4;border-radius:28px;box-shadow:0 5px 20px #d98caf45;overflow:hidden}
+.nav-btn{border:0;border-left:1px solid #e9bfd2;background:transparent;color:#b84480;min-height:76px;padding:8px 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}.nav-btn:last-child{border-left:0}
+.nav-emoji{font-size:25px;line-height:1.2}.nav-label{font-size:10px;font-weight:bold;white-space:nowrap}
+.modal{display:none;position:fixed;inset:0;z-index:20;background:#351c2dcc;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}
+.modal-box{position:relative;background:#fff8fa;border-radius:20px;padding:22px 16px 18px;width:min(440px,100%);text-align:center;line-height:1.8;color:#744256}
+.modal-box h2{color:#c44c80;font-size:20px;margin:2px 35px 12px}.close{position:absolute;left:12px;top:10px;border:0;border-radius:50%;width:34px;height:34px;background:#f6d8e3;color:#9e3e69;font-size:23px}
+.search-input{width:100%;border:1px solid #efbfd4;border-radius:14px;padding:12px;background:white}
+@media(min-width:600px){.categories{grid-template-columns:repeat(3,minmax(0,1fr))}.nav-label{font-size:12px}}
+.search-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
+.search-result{border:1px solid #efbfd4;border-radius:12px;background:#fff4f9;color:#b63878;padding:6px;display:flex;align-items:center;gap:6px;text-align:right}
+.search-result img{width:52px;height:52px;object-fit:cover;border-radius:9px}
+.search-result span{font-size:13px;font-weight:bold}
 </style></head>
 <body>
-<div class="page">
-<img src="assets/design-reference.jpg" alt="طرح اصلی فروشگاه ماهدخت">
-<button class="hotspot" id="h-hair" aria-label="اکسسوری مو" onclick="show('اکسسوری مو','hair')"></button>
-<button class="hotspot" id="h-jewelry" aria-label="بدلیجات" onclick="show('بدلیجات','jewelry')"></button>
-<button class="hotspot" id="h-accessory" aria-label="اکسسوری" onclick="show('اکسسوری','accessory')"></button>
-<button class="hotspot" id="h-sewing" aria-label="خرازی" onclick="show('خرازی','sewing')"></button>
-<button class="hotspot" id="h-gift" aria-label="کادویی" onclick="show('کادویی','gift')"></button>
-<button class="hotspot" id="h-pendant" aria-label="پلاک" onclick="show('پلاک','pendant')"></button>
-<button class="hotspot" id="h-hero" aria-label="مشاهده محصولات" onclick="showAll()"></button>
-<button class="hotspot" id="h-brand" aria-label="همه محصولات" onclick="showAll()"></button>
-<button class="hotspot" id="h-address" aria-label="آدرس فروشگاه" onclick="document.getElementById('addressView').classList.add('open')"></button>
-
-<section class="services-panel" aria-label="خدمات ماهدخت">
-  <h2 class="services-title">خدمات ماهدخت 💗</h2>
-  <div class="services-grid">
-    <a class="service-card" href="#discounts" onclick="openService('تخفیف‌ها');return false">
-      <img src="assets/service-discounts.png" alt="تخفیف‌های ماهدخت">
-      <span>🎀 تخفیف‌ها</span>
-    </a>
-    <a class="service-card" href="#favorites" onclick="openService('آیتم‌های جذاب');return false">
-      <img src="assets/service-favorites.png" alt="آیتم‌های جذاب ماهدخت">
-      <span>🎁 آیتم‌های جذاب</span>
-    </a>
-    <a class="service-card" href="#secure-payment" onclick="openService('پرداخت امن');return false">
-      <img src="assets/service-secure-payment.png" alt="پرداخت امن">
-      <span>💗 پرداخت امن</span>
-    </a>
-    <a class="service-card" href="#about" onclick="openService('درباره‌ی ماهدخت');return false">
-      <img src="assets/service-about-maahdokht.png" alt="درباره‌ی ماهدخت">
-      <span>🌙 درباره‌ی ماهدخت</span>
-    </a>
-  </div>
+<main class="page">
+<header class="topbar">
+<div class="actions left"><button class="icon-btn" aria-label="جستجو" onclick="openModal('searchModal')">⌕</button><button class="icon-btn" aria-label="سبد خرید" onclick="openModal('cartModal')">🛒</button></div>
+<div class="brand">☾ ماهدخت</div>
+<div class="actions right"><button class="icon-btn" aria-label="منو" onclick="openModal('menuModal')">☰</button></div>
+</header>
+<p class="tagline">سفارش آنلاین و حضوری • پرداخت از سایت و دایرکت</p>
+<img class="hero" src="hero.png" alt="بنر اصلی ماهدخت">
+<h2 class="section-title" id="categories">دسته‌بندی محصولات ماهدخت 💗</h2>
+<section class="categories">
+<button class="category" onclick="showCategory('اکسسوری','cat-accessories.png')"><img src="cat-accessories.png" alt="اکسسوری"></button>
+<button class="category" onclick="showCategory('بدلیجات','cat-jewelry.png')"><img src="cat-jewelry.png" alt="بدلیجات"></button>
+<button class="category" onclick="showCategory('اکسسوری مو','cat-hair.png')"><img src="cat-hair.png" alt="اکسسوری مو"></button>
+<button class="category" onclick="showCategory('پلاک','cat-pendant.png')"><img src="cat-pendant.png" alt="پلاک"></button>
+<button class="category" onclick="showCategory('کادویی','cat-gift.png')"><img src="cat-gift.png" alt="کادویی"></button>
+<button class="category" onclick="showCategory('خرازی','cat-haberdashery.png')"><img src="cat-haberdashery.png" alt="خرازی"></button>
 </section>
-</div>
-<div class="viewer" id="viewer" onclick="if(event.target===this)hide()"><div class="box"><button class="close" onclick="hide()">×</button><h2 id="title">محصولات ماهدخت</h2><div class="tiles" id="tiles"></div><p class="hint">برای دیدن عکس بزرگ‌تر، روی تصویر محصول بزن.</p></div></div>
-<div class="viewer" id="addressView" onclick="if(event.target===this)this.classList.remove('open')"><div class="box"><button class="close" onclick="document.getElementById('addressView').classList.remove('open')">×</button><h2>آدرس فروشگاه ماهدخت</h2><p>کرج، شاهین‌ویلا، نبش هفتم شرقی، پاساژ مهرگان، طبقه ۲، واحد ۳۰۸</p></div></div>
-<div class="viewer" id="photoView" onclick="this.classList.remove('open')"><div class="box"><button class="close" onclick="document.getElementById('photoView').classList.remove('open')">×</button><img id="largePhoto" style="width:100%;max-height:75vh;object-fit:contain;border-radius:12px" alt="نمای بزرگ محصول"></div></div>
+<img class="shipping" id="shipping" src="shipping.png" alt="ارسال به سراسر کشور">
+<section class="services" id="services"><h2>خدمات ماهدخت 💗</h2><div class="services-grid">
+<button class="service-card" onclick="showMessage('تخفیف‌ها','از تخفیف‌های ویژه ماهدخت باخبر شو! 🎀')"><img src="service-discounts.png" alt="تخفیف‌ها"><span>🎀 تخفیف‌ها</span></button>
+<button class="service-card" onclick="showMessage('آیتم‌های جذاب','منتخب‌های جذاب ماهدخت 💝')"><img src="service-favorites.png" alt="آیتم‌های جذاب"><span>🎁 آیتم‌های جذاب</span></button>
+<button class="service-card" onclick="showMessage('پرداخت امن','برای راهنمایی پرداخت با فروشگاه تماس بگیر 💗')"><img src="service-secure-payment.png" alt="پرداخت امن"><span>💗 پرداخت امن</span></button>
+<button class="service-card" onclick="showMessage('درباره ماهدخت','به دنیای صورتی و دوست‌داشتنی ماهدخت خوش آمدی 🌙')"><img src="service-about-maahdokht.png" alt="درباره ماهدخت"><span>🌙 درباره ماهدخت</span></button>
+</div></section></main>
+<nav class="bottom-nav" aria-label="منوی پایین">
+<button class="nav-btn" onclick="showMessage('حساب کاربری','بخش حساب کاربری ماهدخت به‌زودی فعال می‌شود 💗')"><span class="nav-emoji">👤</span><span class="nav-label">حساب کاربری</span></button>
+<button class="nav-btn" onclick="showMessage('علاقه‌مندی‌ها','هنوز محصولی به علاقه‌مندی‌ها اضافه نکردی 💕')"><span class="nav-emoji">💗</span><span class="nav-label">علاقه‌مندی‌ها</span></button>
+<button class="nav-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><span class="nav-emoji">🏠</span><span class="nav-label">خانه</span></button>
+<button class="nav-btn" onclick="document.querySelector('.categories').scrollIntoView({behavior:'smooth'})"><span class="nav-emoji">🧸</span><span class="nav-label">دسته‌بندی‌ها</span></button>
+<button class="nav-btn" onclick="showMessage('آدرس فروشگاه','آدرس فروشگاه را اینجا وارد کن 💗')"><span class="nav-emoji">💕</span><span class="nav-label">آدرس فروشگاه</span></button>
+</nav>
+<div class="modal" id="searchModal" onclick="if(event.target===this)closeModal(this.id)"><div class="modal-box"><button class="close" onclick="closeModal('searchModal')">×</button><h2>جستجو در ماهدخت</h2><input id="searchInput" class="search-input" placeholder="مثلاً پلاک، بدلیجات، خرازی..." oninput="searchCategories(this.value)"><div id="searchResults" class="search-results"></div></div></div>
+<div class="modal" id="cartModal" onclick="if(event.target===this)closeModal(this.id)"><div class="modal-box"><button class="close" onclick="closeModal('cartModal')">×</button><h2>🛒 سبد خرید</h2><p>سبد خریدت فعلاً خالیه 💗</p></div></div>
+<div class="modal" id="menuModal" onclick="if(event.target===this)closeModal(this.id)"><div class="modal-box"><button class="close" onclick="closeModal('menuModal')">×</button><h2>منوی ماهدخت</h2><p><a href="#" onclick="closeModal('menuModal');window.scrollTo({top:0,behavior:'smooth'});return false">خانه</a></p><p><a href="#categories" onclick="closeModal('menuModal');return false">دسته‌بندی‌ها</a></p><p><a href="#services" onclick="closeModal('menuModal');return false">خدمات ماهدخت</a></p><p><a href="#shipping" onclick="closeModal('menuModal');return false">ارسال</a></p></div></div>
+<div class="modal" id="messageModal" onclick="if(event.target===this)closeModal(this.id)"><div class="modal-box"><button class="close" onclick="closeModal('messageModal')">×</button><h2 id="messageTitle"></h2><p id="messageText"></p></div></div>
 <script>
-const catalog={hair:['کش مو و گیره','اکسسوری مو'],jewelry:['گوشواره و زیورآلات','بدلیجات'],accessory:['اکسسوری‌های خاص','اکسسوری'],sewing:['لوازم خرازی','خرازی'],gift:['بسته هدیه','کادویی'],pendant:['پلاک و آویز','پلاک']};
-function show(name,key){document.getElementById('title').textContent=name;document.getElementById('tiles').innerHTML=`<div><img src="assets/${key}.jpg" alt="${name}" onclick="zoom('assets/${key}.jpg')"><p>${catalog[key][0]}</p></div>`;document.getElementById('viewer').classList.add('open')}
-function showAll(){document.getElementById('title').textContent='دسته‌بندی محصولات ماهدخت';document.getElementById('tiles').innerHTML=Object.entries(catalog).map(([k,v])=>`<div><img src="assets/${k}.jpg" alt="${v[1]}" onclick="zoom('assets/${k}.jpg')"><p>${v[1]}</p></div>`).join('');document.getElementById('viewer').classList.add('open')}
-function hide(){document.getElementById('viewer').classList.remove('open')}
-function zoom(src){document.getElementById('largePhoto').src=src;document.getElementById('photoView').classList.add('open')}
-function openService(name){
-  document.getElementById('title').textContent=name;
-  document.getElementById('tiles').innerHTML='<p style="grid-column:1/-1">این بخش به‌زودی تکمیل می‌شود 💗</p>';
-  document.getElementById('viewer').classList.add('open');
+const categoryData=[
+ {name:'اکسسوری',file:'cat-accessories.png'},
+ {name:'بدلیجات',file:'cat-jewelry.png'},
+ {name:'اکسسوری مو',file:'cat-hair.png'},
+ {name:'پلاک',file:'cat-pendant.png'},
+ {name:'کادویی',file:'cat-gift.png'},
+ {name:'خرازی',file:'cat-haberdashery.png'}
+];
+function openModal(id){document.getElementById(id).classList.add('open')}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+function showMessage(title,message){document.getElementById('messageTitle').textContent=title;document.getElementById('messageText').textContent=message;openModal('messageModal')}
+function showCategory(title,image){
+ document.getElementById('messageTitle').textContent=title;
+ document.getElementById('messageText').innerHTML='';
+ const img=document.createElement('img');img.src=image;img.alt=title;img.style.cssText='width:100%;max-width:320px;border-radius:16px;display:block;margin:auto';
+ document.getElementById('messageText').appendChild(img);
+ openModal('messageModal')
 }
+function searchCategories(query){
+ const results=document.getElementById('searchResults');results.innerHTML='';
+ const q=query.trim();
+ if(!q){results.innerHTML='<p>نام دسته یا محصول را وارد کن 💗</p>';return}
+ const matches=categoryData.filter(c=>c.name.includes(q));
+ if(!matches.length){results.innerHTML='<p>موردی پیدا نشد. نام دسته را دوباره بررسی کن 🌸</p>';return}
+ matches.forEach(c=>{
+  const btn=document.createElement('button');btn.className='search-result';
+  btn.innerHTML='<img src="'+c.file+'" alt=""><span>'+c.name+'</span>';
+  btn.onclick=()=>{closeModal('searchModal');showCategory(c.name,c.file)};
+  results.appendChild(btn)
+ })
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'))});
 </script></body></html>
